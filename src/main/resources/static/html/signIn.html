@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+</head>
+<body>
+  <form method="post">
+    <div><label>아이디<input type="text" name="id"></label></div>
+    <div><label>비밀번호</label><input type="password" name="password"></div>
+    <div><label>이메일</label><input type="email" name="email"></div>
+    <div><label>이름<input type="text" name="username"></label></div>
+    <div><label>나이<input type="text" name="age"></label></div>
+    <div>
+      <label>
+        성별
+        <input id="man" type="radio" name="gender" value="m">
+        <label for="man">남자</label>
+        <input id="woman" type="radio" name="gender" value="w">
+        <label for="woman">여자</label>
+      </label>
+    </div>
+    <div>
+      집 주소
+      <select>
+        <option selected>=== 주소 선택 ===</option>
+        <option value="S">서울특별시</option>
+        <option value="K">경기도</option>
+      </select>
+
+    </div>
+  </form>
+</body>
+</html>
