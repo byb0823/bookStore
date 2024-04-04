@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+</head>
+<body>
+  <form method="post" th:action th:object="${form}">
+    <div><label>아이디<input type="text" name="memberId" th:field="*{memberId}"></label></div>
+    <label th:errors="*{memberId}">id</label>
+    <div><label>비밀번호</label><input type="password" name="password" th:field="*{password}"></div>
+    <div><label>이메일</label><input type="email" name="email" th:field="*{email}"></div>
+    <div><label>이름<input type="text" name="username" th:field="*{username}"></label></div>
+    <div><label>나이<input type="text" name="age" th:field="*{age}"></label></div>
+    <div>
+      <label>
+        성별
+        <input id="man" type="radio" name="gender" value="m" th:field="*{gender}">
+        <label for="man">남자</label>
+        <input id="woman" type="radio" name="gender" value="w" th:field="*{gender}">
+        <label for="woman">여자</label>
+      </label>
+    </div>
+    <div>
+      집 주소
+      <select th:field="*{region}">
+        <option value="">=== 주소 선택 ===</option>
+        <option th:each="region : ${regions}" th:value="${region.code}" th:text="${region.name}"></option>
+        <!--<option value="S">서울특별시</option>
+        <option value="K">경기도</option>-->
+      </select>
+
+    </div>
+  </form>
+</body>
+</html>
