@@ -21,9 +21,9 @@ public class Member {
 
     private Gender gender;
 
-    private Region region;
+    private String region;
 
-    public Member(String id, String password, String email, String username, int age, Gender gender, Region region) {
+    public Member(String id, String password, String email, String username, int age, Gender gender, String region) {
         this.id = id;
         this.password = password;
         this.email = email;

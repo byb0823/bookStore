@@ -25,11 +25,9 @@ public class SignInMemberForm {
     private String username;
 
     @Min(1)
-    private int age;
+    private Integer age;
 
-    @NotBlank
     private Gender gender;
 
-    @NotBlank
-    private Region region;
+    private String region;
 }
