@@ -1,5 +1,6 @@
 package byb.bookStore.web.signIn;
 
+import byb.bookStore.domain.member.Gender;
 import byb.bookStore.domain.member.Member;
 import byb.bookStore.domain.member.Region;
 import byb.bookStore.domain.signIn.SignInMemberForm;
@@ -33,6 +34,11 @@ public class SignInController {
         return list;
     }
 
+    @ModelAttribute("gender")
+    public Gender[] gender() {
+        return Gender.values();
+    }
+
     @GetMapping("/signIn")
     public String getSignInPage(@ModelAttribute("form") SignInMemberForm form) {
         return "signIn";
@@ -47,7 +53,7 @@ public class SignInController {
             }
         }
 
-        if (bindingResult.hasFieldErrors()) {
+        if (bindingResult.hasErrors()) {
             log.error("error={}", bindingResult.getFieldError());
             return "signIn";
         }

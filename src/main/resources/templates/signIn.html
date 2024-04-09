@@ -15,13 +15,18 @@
     <div><label>이름<input type="text" th:field="*{username}"></label></div>
     <div><label>나이<input type="text" th:field="*{age}"></label></div>
     <div>
-      <label>
+      <!--<label>
         성별
         <input id="man" type="radio" name="gender" value="M" th:field="*{gender}">
         <label for="man">남자</label>
         <input id="woman" type="radio" name="gender" value="W" th:field="*{gender}">
         <label for="woman">여자</label>
-      </label>
+      </label>-->
+      <div>성별</div>
+      <div th:each="g : ${gender}">
+        <input type="radio" th:field="*{gender}" th:value="${g.name()}">
+        <label th:for="${#ids.prev('gender')}" th:text="${g.description}">성별</label>
+      </div>
     </div>
     <div>
       집 주소
